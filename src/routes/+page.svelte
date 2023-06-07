@@ -4,18 +4,17 @@
 
 	onMount(() => {
 		const video = document.querySelector('video');
-		const durationMs = video.duration * 1000;
-		let timeMs;
+
+		let time = 0;
+
+		setInterval(() => {
+			video.currentTime = time;
+		}, 250);
 
 		function seek(e) {
-			const { clientX } = e;
-			const { innerWidth } = window;
-			timeMs = (clientX * durationMs) / innerWidth;
+			time = (e.clientX * video.duration) / window.innerWidth;
+			console.log(time);
 		}
-
-		const loop = setTimeout(() => {
-			video.currentTime = (timeMs / 1000).toFixed(2);
-		}, 100);
 
 		window.addEventListener('mousemove', seek);
 	});
@@ -24,13 +23,13 @@
 <!-- <Meta data={home} /> -->
 
 <section id="home" class="row fend full">
-	<video src="/header.webm" playsinline muted />
+	<video src="/header-low.mp4" playsinline muted />
 </section>
 
 <section id="tech" />
 
 <style lang="postcss">
 	video {
-		background: transparent !important;
+		mix-blend-mode: multiply;
 	}
 </style>
