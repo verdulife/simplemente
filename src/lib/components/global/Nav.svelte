@@ -3,7 +3,7 @@
 </script>
 
 <nav class="col acenter wfull">
-	<p>nav</p>
+	<img src="/logo.svg" alt="logo" />
 </nav>
 
 <style lang="postcss">

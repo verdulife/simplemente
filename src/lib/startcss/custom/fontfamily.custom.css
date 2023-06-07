@@ -9,6 +9,7 @@
 
 @import '../fonts/inter-variable.css';
 @import '../fonts/proto-mono.css';
+@import '../fonts/hagrid.css';
 
 /* 🎨 custom properties 🎨 */
 
@@ -20,6 +21,6 @@
 		'Courier New', monospace, var(--emoji-ui);
 
 	--font-base: 'Inter', var(--system-ui);
-	--font-title: 'ProtoMono', var(--font-base);
-	--font-code: var(--code-ui);
+	--font-title: 'Hagrid', var(--font-base);
+	--font-code: 'ProtoMono', var(--code-ui);
 }
