@@ -1,0 +1,86 @@
+/* 
+          __             __                
+    _____/ /_____ ______/ /________________
+   / ___/ __/ __ `/ ___/ __/ ___/ ___/ ___/
+  (__  ) /_/ /_/ / /  / /_/ /__(__  |__  ) 
+ /____/\__/\__,_/_/   \__/\___/____/____/  v0.0.1 
+
+*/
+
+@custom-selector :--button button, a[role='button'];
+
+/* 🎨 dynamic properties 🎨 */
+
+:--button {
+	--background-color: var(--base-800);
+	--color: var(--base-200);
+	--border: 1px solid var(--base-900);
+
+	&:hover,
+	&:focus {
+		--background-color: var(--base-700);
+		--border: 1px solid var(--base-800);
+	}
+}
+
+:--button[disabled] {
+	--background-color: var(--base-600);
+	--color: var(--base-700);
+}
+
+:--button.unset {
+	--background-color: unset;
+	--color: unset;
+	--border: unset;
+}
+
+/* ⚡ startcss reset ⚡ */
+
+:--button {
+	cursor: pointer;
+	background-color: var(--background-color);
+	color: var(--color);
+	font-family: var(--font-title);
+	font-size: var(--font-xs);
+	text-align: center;
+	text-decoration: none;
+	border: var(--border);
+	border-radius: 0.3em;
+	text-shadow: 0 0 0.1em currentColor;
+	user-select: none;
+	-webkit-user-drag: none;
+	padding: var(--spacing-md) var(--spacing-2xl);
+	transition: 150ms;
+}
+
+:--button[disabled] {
+	cursor: not-allowed;
+	background-color: var(--base-600);
+	color: var(--base-700);
+}
+
+:--button.unset {
+	background-color: var(--backgrond-color);
+	backdrop-filter: unset;
+	color: var(--color);
+	border: var(--border);
+	padding: unset;
+}
+
+:--button.accent {
+	background-color: hsl(var(--accent-hsl), 1);
+	color: var(--base-900);
+
+	&:hover {
+		background-color: hsl(var(--accent-hsl), 0.6);
+	}
+}
+
+:--button.error {
+	background-color: hsl(var(--error-hsl), 0.2);
+	color: var(--error);
+
+	&:hover {
+		background-color: hsl(var(--error-hsl), 0.3);
+	}
+}
