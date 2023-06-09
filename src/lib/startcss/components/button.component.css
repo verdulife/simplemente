@@ -12,14 +12,21 @@
 /* 🎨 dynamic properties 🎨 */
 
 :--button {
-	--background-color: var(--base-800);
-	--color: var(--base-200);
-	--border: 1px solid var(--base-900);
+	--background-color: hsl(var(--alt-hsl), 0.9);
+	--color: var(--base);
+	--border: none;
+	--clip-path: polygon(
+		0.75em 0%,
+		100% 0,
+		100% calc(100% - 0.75em),
+		calc(100% - 0.75em) 100%,
+		0 100%,
+		0 0.75em
+	);
 
 	&:hover,
 	&:focus {
-		--background-color: var(--base-700);
-		--border: 1px solid var(--base-800);
+		--background-color: var(--alt-800);
 	}
 }
 
@@ -32,6 +39,7 @@
 	--background-color: unset;
 	--color: unset;
 	--border: unset;
+	--clip-path: unset;
 }
 
 /* ⚡ startcss reset ⚡ */
@@ -39,14 +47,14 @@
 :--button {
 	cursor: pointer;
 	background-color: var(--background-color);
+	backdrop-filter: blur(1em);
 	color: var(--color);
-	font-family: var(--font-title);
+	font-family: var(--font-code);
 	font-size: var(--font-xs);
 	text-align: center;
 	text-decoration: none;
 	border: var(--border);
-	border-radius: 0.3em;
-	text-shadow: 0 0 0.1em currentColor;
+	clip-path: var(--clip-path);
 	user-select: none;
 	-webkit-user-drag: none;
 	padding: var(--spacing-md) var(--spacing-2xl);
@@ -64,7 +72,6 @@
 	backdrop-filter: unset;
 	color: var(--color);
 	border: var(--border);
-	padding: unset;
 }
 
 :--button.accent {
