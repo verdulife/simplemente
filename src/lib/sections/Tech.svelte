@@ -1,28 +1,3 @@
-<script>
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		const wrapper = document.querySelector('.wrapper');
-		const images = [];
-
-		for (let i = 0; i < 52; i++) {
-			images[i] = document.createElement('img');
-			wrapper.appendChild(images[i]);
-			images[i].src = `/header/${i + 1}-min.png`;
-			images[i].style.cssText = `
-				position: absolute;
-				bottom: 0;
-				left: -40%;
-				height: 80%;
-				mix-blend-mode: multiply;
-				opacity: 0;
-			`;
-		}
-
-    images[5].style.opacity = 1;
-	});
-</script>
-
 <section id="tech" class="row fcenter full">
 	<article class="col w1/2">
 		<h1><b>La cintura <br /> ergonomica</b></h1>
