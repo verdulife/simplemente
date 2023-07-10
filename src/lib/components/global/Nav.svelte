@@ -9,7 +9,7 @@
 				<Image width="80px" src="/logo.svg" alt="logo" />
 			</a>
 
-			<ul class="row acenter">
+			<!-- <ul class="row acenter">
 				<li>
 					<a href="/#home">INICIO</a>
 				</li>
@@ -25,12 +25,12 @@
 				<li>
 					<a href="/#contact">CONTACTO</a>
 				</li>
-			</ul>
+			</ul> -->
 		</aside>
 
-		<li>
+		<!-- <li>
 			<a href="mailto:free@simplemente.com">free@simplemente.com</a>
-		</li>
+		</li> -->
 	</main>
 </nav>
 
@@ -44,6 +44,7 @@
 
 	main {
 		max-width: var(--media-xl);
+		padding: 0 2em;
 	}
 
 	aside {

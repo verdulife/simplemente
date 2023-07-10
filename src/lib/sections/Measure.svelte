@@ -10,9 +10,9 @@
 </script>
 
 <section id="measure" class="row fcenter wfull">
-	<div class="wrapper row fcenter full">
+	<div class="wrapper row fcenter wfull">
 		<article class="col acenter wfull">
-			<h2 class="tcenter">
+			<h2 class="tcenter wfull">
 				<b>
 					Si estas realmente interesado en conseguir uno de nuestros modelos, rellena el <i
 						>formulario</i
@@ -24,13 +24,13 @@
 			<span class="xdiv" />
 
 			<header class="col acenter wfull">
-				<h3><b>Como tomar <i>medidas</i></b></h3>
+				<h3 class="tcenter wfull"><b>Como tomar <i>medidas</i></b></h3>
 				<p>
 					Para tomar correctamente las medidas, visuliza el video explicativo o descargate el PDF.
 				</p>
 			</header>
 
-			<main class="row jevenly acenter wfull">
+			<main class="row col@md jevenly acenter wfull">
 				<div class="video-wrapper">
 					<video
 						class="full"
@@ -88,6 +88,7 @@
 	h3 {
 		font-size: var(--font-2xl);
 		color: var(--alt);
+		line-height: 1;
 
 		& i {
 			color: var(--accent);
@@ -101,6 +102,7 @@
 	}
 
 	a[role='button'] {
+		min-width: 180px;
 		background-color: var(--accent);
 		color: var(--base);
 	}
@@ -108,6 +110,14 @@
 	.ydiv {
 		height: 200px;
 		background-color: var(--base-900);
+
+		@media --md {
+			display: none;
+		}
+	}
+
+	main {
+		gap: 2em;
 	}
 
 	.video-wrapper {

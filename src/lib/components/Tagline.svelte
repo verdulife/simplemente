@@ -9,5 +9,9 @@
 		font-family: var(--font-code);
 		transform: rotate(90deg);
 		transform-origin: bottom right;
+
+		@media --md {
+			display: none;
+		}
 	}
 </style>

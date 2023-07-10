@@ -12,8 +12,7 @@
 			images[i].style.cssText = `
 				position: absolute;
 				bottom: 0;
-				left: -40%;
-				height: 80%;
+				height: 90%;
 				mix-blend-mode: multiply;
 				opacity: 0;
 			`;
@@ -33,8 +32,8 @@
 </script>
 
 <section id="home" class="full">
-	<div class="wrapper row fcenter full">
-		<article class="col w1/2">
+	<div class="wrapper row col@md fcenter jend@md full">
+		<article class="col w1/2 wfull@md">
 			<h1><b>muevete <br /> <i>libremente</i></b></h1>
 			<p><strong>PRESENTANDO <span>SIMPLE-MENTE</span> TECH</strong></p>
 
@@ -50,7 +49,7 @@
 			</footer>
 		</article>
 
-		<aside class="imagesWrapper row w1/2 hfull" />
+		<aside class="imagesWrapper row jcenter w1/2 wfull@md hfull h1/3@md" />
 	</div>
 </section>
 
@@ -58,6 +57,11 @@
 	.wrapper {
 		max-width: var(--media-xl);
 		margin: 0 auto;
+	}
+
+	article {
+		gap: 2em;
+		padding: 2em;
 	}
 
 	h1 {
@@ -95,11 +99,7 @@
 	}
 
 	a[role='button'] {
-		width: 200px;
-	}
-
-	article {
-		gap: 2em;
+		width: 180px;
 	}
 
 	.imagesWrapper {
