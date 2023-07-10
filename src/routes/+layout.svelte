@@ -17,8 +17,9 @@
 <style lang="postcss">
 	main {
 		background-color: var(--base);
-		background-image: url('/bg.png');
+		background-image: url('/bg.svg');
 		background-repeat: no-repeat;
 		background-size: cover;
+		background-blend-mode: overlay;
 	}
 </style>

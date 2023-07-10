@@ -5,15 +5,16 @@
 		const imagesWrapper = document.querySelector('.imagesWrapper');
 		const images = [];
 
-		for (let i = 0; i < 120; i++) {
+		for (let i = 0; i < 47; i++) {
 			images[i] = document.createElement('img');
 			imagesWrapper.appendChild(images[i]);
-			images[i].src = `/h2/${i + 1}.png`;
+			images[i].src = `/header/${i + 1}.png`;
 			images[i].style.cssText = `
 				position: absolute;
 				bottom: 0;
 				left: -40%;
 				height: 80%;
+				mix-blend-mode: multiply;
 				opacity: 0;
 			`;
 		}
@@ -21,7 +22,7 @@
 		images[5].style.opacity = 1;
 
 		function seek(e) {
-			const time = Math.ceil((e.clientX * 119) / window.innerWidth);
+			const time = Math.ceil((e.clientX * 46) / window.innerWidth);
 			images.forEach((img) => (img.style.opacity = '0'));
 
 			images[time].style.opacity = 1;
