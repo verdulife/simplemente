@@ -3,27 +3,17 @@
 		<article class="col acenter wfull">
 			<h2 class="tcenter wfull">
 				<b>
-					Si estas realmente interesado en conseguir uno de nuestros modelos, rellena el <i
-						>formulario</i
-					>
-					que encontraras más abajo.
+					Si estas realmente interesado en conseguir uno de nuestros pantalones, sigue las
+					instrucciones del <i>PDF</i> para tomar las medidas segun el modelo, y rellena el
+					<i>formulario</i>.
 				</b>
 			</h2>
-
-			<span class="xdiv" />
-
-			<header class="col acenter wfull">
-				<h3 class="tcenter wfull"><b>Como tomar <i>medidas</i></b></h3>
-				<p>
-					Para tomar correctamente las medidas, visuliza el video explicativo o descargate el PDF.
-				</p>
-			</header>
 
 			<main class="row col@md jevenly acenter wfull">
 				<a role="button" href="/instrucciones.pdf" target="_blank">DESCARGAR PDF</a>
 			</main>
 
-			<footer>footer</footer>
+			<span class="xdiv" />
 		</article>
 	</div>
 </section>
@@ -53,22 +43,6 @@
 	.xdiv {
 		width: 20%;
 		background-color: var(--base-900);
-	}
-
-	h3 {
-		font-size: var(--font-2xl);
-		color: var(--alt);
-		line-height: 1;
-
-		& i {
-			color: var(--accent);
-			font-style: normal;
-		}
-	}
-
-	p {
-		text-align: center;
-		max-width: 900px;
 	}
 
 	a[role='button'] {
