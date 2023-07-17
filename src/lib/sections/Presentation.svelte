@@ -21,10 +21,12 @@
 
 				<br /><br />
 
-				El pantalon esta compuesto por una mezcla de tela de <strong>cáñamo</strong> y
-				<strong>algodón ecológico</strong>, junto con un 18% de
-				<strong>poliéster reciclado</strong>. Esta combinación proporciona una resistencia
-				excepcional, incluso mayor que la del tejano, a la vez que es más ligero y flexible.
+				El pantalon color <strong>Atlántida</strong> esta compuesto por un
+				<strong>13% de tela de cáñamo ecológica</strong>, <strong>68% de algodón ecológico</strong>
+				y un <strong>19% de nylon reciclado</strong>. El color <strong>Avena</strong> esta compuesto
+				por un <strong>53% cáñamo ecológico</strong>, <strong>44% R-Poly</strong> y un
+				<strong>3% spansex</strong>. Estas combinaciónes proporcionan una resistencia excepcional,
+				incluso mayor que la del tejano, a la vez que son más ligeras y flexibles.
 
 				<br /><br />
 
@@ -74,7 +76,7 @@
 
 	p {
 		text-align: center;
-		color: var(--base-400);
+		color: var(--base-300);
 		max-width: 900px;
 	}
 

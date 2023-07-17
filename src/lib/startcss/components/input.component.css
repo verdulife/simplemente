@@ -13,8 +13,8 @@
 /* 🎨 dynamic properties 🎨 */
 
 :--input {
-	--background-color: hsl(var(--base-hsl), 0.4);
-	--border: 1px solid var(--base-200);
+	--background-color: hsl(var(--base-hsl), 0.1);
+	--border: 1px solid hsl(var(--base-hsl), 0.1);
 
 	&:focus,
 	&:active:not(:disabled) {

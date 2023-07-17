@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	/* import { onMount } from 'svelte';
 
 	onMount(() => {
 		const imagesWrapper = document.querySelector('.imagesWrapper');
@@ -28,11 +28,13 @@
 		}
 
 		window.addEventListener('mousemove', seek);
-	});
+	}); */
+
+	import Image from '../components/global/Image.svelte';
 </script>
 
 <section id="home" class="full">
-	<div class="wrapper row col@md fcenter jend@md full">
+	<div class="wrapper row col@md fcenter full">
 		<article class="col w1/2 wfull@md">
 			<h1><b>muevete <br /> <i>libremente</i></b></h1>
 			<p><strong>PRESENTANDO <span>SIMPLE-MENTE</span> TECH</strong></p>
@@ -43,13 +45,15 @@
 				prefieren calidad frente a cantidad.
 			</p>
 
-			<footer class="row acenter">
+			<footer class="row acenter wfull">
 				<a role="button" href="/#presentation">SABER MÁS</a>
 				<a role="button" class="unset" href="/#contact">CONTACTO</a>
 			</footer>
 		</article>
 
-		<aside class="imagesWrapper row jcenter w1/2 wfull@md hfull h1/3@md" />
+		<aside class="imagesWrapper row jcenter aend w1/2 wfull@md hfull h1/4@md">
+			<img height="90%" src="/pantalon.png" alt="Pantalon Mynekung" />
+		</aside>
 	</div>
 </section>
 
@@ -99,10 +103,17 @@
 	}
 
 	a[role='button'] {
-		width: 180px;
+		width: 50%;
+		max-width: 200px;
 	}
 
 	.imagesWrapper {
 		position: relative;
+		pointer-events: none;
+
+		@media (--sm) {
+			position: absolute;
+			bottom: 0;
+		}
 	}
 </style>
