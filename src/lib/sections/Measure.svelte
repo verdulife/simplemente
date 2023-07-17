@@ -1,14 +1,3 @@
-<script>
-	import Play from '$lib/icons/Play.svelte';
-
-	let paused = true;
-	let volume = 1;
-
-	function playPause() {
-		paused = !paused;
-	}
-</script>
-
 <section id="measure" class="row fcenter wfull">
 	<div class="wrapper row fcenter wfull">
 		<article class="col acenter wfull">
@@ -31,25 +20,6 @@
 			</header>
 
 			<main class="row col@md jevenly acenter wfull">
-				<div class="video-wrapper">
-					<video
-						class="full"
-						src="/medicion.mp4"
-						playsinline
-						bind:paused
-						bind:volume
-						on:click={playPause}
-					/>
-
-					{#if paused}
-						<figure class="row fcenter full" on:click={playPause}>
-							<Play />
-						</figure>
-					{/if}
-				</div>
-
-				<span class="ydiv" />
-
 				<a role="button" href="/instrucciones.pdf" target="_blank">DESCARGAR PDF</a>
 			</main>
 
@@ -107,30 +77,7 @@
 		color: var(--base);
 	}
 
-	.ydiv {
-		height: 200px;
-		background-color: var(--base-900);
-
-		@media --md {
-			display: none;
-		}
-	}
-
 	main {
 		gap: 2em;
-	}
-
-	.video-wrapper {
-		position: relative;
-		width: 300px;
-		aspect-ratio: 9/14;
-		border-radius: 1em;
-		overflow: hidden;
-
-		& figure {
-			cursor: pointer;
-			position: absolute;
-			inset: 0;
-		}
 	}
 </style>
