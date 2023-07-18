@@ -1,9 +1,14 @@
 <script>
+	import { ui } from '$lib/ui';
+	import { Lang } from '$lib/stores';
+
+	$: contact = ui[$Lang].contact;
+	$: buttonText = contact.btn1;
+
 	let formData = {};
-	let buttonText = 'ENVIAR';
 
 	async function sendForm() {
-		buttonText = 'ENVIANDO...';
+		buttonText = contact.btn2;
 
 		const res = await fetch('/form', {
 			method: 'POST',
@@ -14,14 +19,14 @@
 		});
 
 		if (!res.ok) {
-			alert('Algo ha salido mal. Porfavor vuelve a intentarlo');
+			alert(contact.error);
 			return;
 		}
 
-		buttonText = 'GRACIAS 😀';
+		buttonText = contact.btn3;
 
 		setTimeout(() => {
-			buttonText = 'ENVIAR';
+			buttonText = contact.btn1;
 		}, 2000);
 
 		formData = {};
@@ -31,27 +36,25 @@
 <section id="contact" class="row fcenter wfull">
 	<div class="wrapper col acenter wfull">
 		<h2 class="tcenter">
-			<b>
-				Formulario de <i>pedido</i>
-			</b>
+			<b>{contact.title1} <i>{contact.title2}</i> </b>
 		</h2>
 
 		<form class="row wrap jcenter wfull" on:submit|preventDefault={sendForm}>
 			<div class="row wrap wfull">
 				<label class="col grow" for="name">
-					<small>Nombre</small>
+					<small>{contact.input_name}</small>
 					<input class="wfull" type="text" id="name" bind:value={formData.name} required />
 				</label>
 
 				<label class="col grow" for="surname">
-					<small>Apellidos</small>
+					<small>{contact.input_surname}</small>
 					<input class="wfull" type="text" id="surname" bind:value={formData.surname} required />
 				</label>
 			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="phone">
-					<small>Telefono</small>
+					<small>{contact.input_phone}</small>
 					<input
 						class="wfull"
 						type="tel"
@@ -63,25 +66,25 @@
 				</label>
 
 				<label class="col grow" for="email">
-					<small>Email</small>
+					<small>{contact.input_email}</small>
 					<input class="wfull" type="email" id="email" bind:value={formData.email} required />
 				</label>
 			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="address">
-					<small>Direccion de envio</small>
+					<small>{contact.input_address}</small>
 					<input class="wfull" type="text" id="address" bind:value={formData.address} required />
 				</label>
 
 				<label class="col grow" for="country">
-					<small>Pais</small>
+					<small>{contact.input_country}</small>
 					<input class="wfull" type="text" id="country" bind:value={formData.country} required />
 				</label>
 			</div>
 
 			<label class="col wfull" for="model">
-				<small>Modelo</small>
+				<small>{contact.input_model}</small>
 				<select class="wfull" id="model" bind:value={formData.model} required>
 					<option value="Mynekung">Mynekung</option>
 					<option value="Tarzan Movement">Tarzan Movement</option>
@@ -90,12 +93,12 @@
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="leg_size">
-					<small>Medidas de la pierna (cm)</small>
+					<small>{contact.input_leg}</small>
 					<input class="wfull" type="text" id="leg_size" bind:value={formData.leg_size} required />
 				</label>
 
 				<label class="col grow" for="waist_size">
-					<small>Medidas cintura (cm)</small>
+					<small>{contact.input_waist}</small>
 					<input
 						class="wfull"
 						type="text"
@@ -113,9 +116,9 @@
 
 		<footer>
 			<p class="tcenter">
-				<b
-					>Estare encantado de <i>añadirte a mi lista</i>, y tan pronto como pueda, me pondre
-					<i>en contacto contigo</i>, un saludo 👋.
+				<b>
+					{contact.footer1} <i>{contact.footer2}</i>{contact.footer3}
+					<i>{contact.footer4}</i>{contact.footer5}
 				</b>
 			</p>
 		</footer>
@@ -169,6 +172,7 @@
 	}
 
 	label > small {
+		font-family: var(--font-code);
 		padding: 0.5em;
 	}
 

@@ -1,8 +1,10 @@
 <script>
 	import { page } from '$app/stores';
+	import { Lang } from '$lib/stores';
 	import Image from '$components/global/Image.svelte';
 
 	$: english = $page.route.id === '/en';
+	$: english, ($Lang = english ? 'en' : 'es');
 </script>
 
 <nav class="col acenter wfull">
@@ -36,9 +38,9 @@
 		</li> -->
 
 		{#if english}
-			<a href="/">🌍 ESPAÑOL</a>
+			<a href="/">🌍 VER. ESPAÑOLA</a>
 		{:else}
-			<a href="/en">🌍 ENGLISH</a>
+			<a href="/en">🌍 ENGLISH VER.</a>
 		{/if}
 	</main>
 </nav>

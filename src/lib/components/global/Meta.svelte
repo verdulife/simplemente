@@ -17,7 +17,7 @@
 	<meta property="og:image:type" content="image/jpeg" />
 
 	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:card" content="{data.card_image}" />
 	<meta name="twitter:site" content={data.url} />
 	<meta name="twitter:title" content={data.title} />
 	<meta name="twitter:description" content={data.description} />

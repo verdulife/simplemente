@@ -31,33 +31,26 @@
 	}); */
 
 	import { ui } from '$lib/ui';
-	import { page } from '$app/stores';
+	import { Lang } from '$lib/stores';
 
-	$: english = $page.route.id === '/en';
-	$: lang = english ? 'en' : 'es';
-	$: home = ui[lang].home;
-
-	console.log(home);
+	$: home = ui[$Lang].home;
 </script>
 
 <section id="home" class="full">
 	<div class="wrapper row jcenter aend full">
 		<article class="col jcenter w1/2 w3/4@md hfull">
-			<h1><b>muevete <br /> <i>libremente</i></b></h1>
-			<p><strong>PRESENTANDO <span>SIMPLE-MENTE</span> TECH</strong></p>
+			<h1><b>{home.title1} <br /> <i>{home.title2}</i></b></h1>
+			<p><strong>{home.subtitle1} <span>{home.subtitle2}</span></strong></p>
 
-			<p>
-				Un pantalón práctico de carácter minimalista, ideal para todas aquellas personas que
-				aprecian sentirse cómodos en todo momento y que les gusta moverse sin limitaciones.
-			</p>
+			<p>{home.desc}</p>
 
 			<footer class="row acenter wfull">
-				<a role="button" href="/#presentation">SABER MÁS</a>
-				<a role="button" class="unset" href="/#measure">CONTACTO</a>
+				<a role="button" href="/#presentation">{home.btn1}</a>
+				<a role="button" class="unset" href="/#measure">{home.btn2}</a>
 			</footer>
 		</article>
 
-		<aside class="imagesWrapper row jcenter aend w1/2 wfull@md hfull">
+		<aside class="imagesWrapper row jcenter aend w1/2 w1/4@md hfull">
 			<img height="90%" src="/pantalon.png" alt="Pantalon Mynekung" />
 		</aside>
 	</div>

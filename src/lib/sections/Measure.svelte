@@ -1,20 +1,21 @@
 <script>
 	import Image from '../components/global/Image.svelte';
+
+	import { ui } from '$lib/ui';
+	import { Lang } from '$lib/stores';
+
+	$: measure = ui[$Lang].measure;
 </script>
 
 <section id="measure" class="row fcenter wfull">
 	<div class="wrapper row fcenter wfull">
 		<article class="col acenter wfull">
 			<h2 class="tcenter wfull">
-				<b>
-					Si estas realmente interesado en conseguir uno de nuestros pantalones, sigue las
-					instrucciones del <i>PDF</i> para tomar las medidas segun el modelo, y rellena el
-					<i>formulario</i>.
-				</b>
+				<b>{measure.desc1} <i>{measure.desc2}</i> {measure.desc3} <i>{measure.desc4}</i>.</b>
 			</h2>
 
 			<main class="row col@md jevenly acenter wfull">
-				<a role="button" href="/user-guide.pdf" target="_blank">DESCARGAR PDF</a>
+				<a role="button" href="/user-guide.pdf" target="_blank">{measure.btn}</a>
 			</main>
 
 			<span class="xdiv" />
@@ -28,6 +29,10 @@
 					<Image width="100%" src="/tarzan-movement.jpg" />
 				</picture>
 			</footer>
+
+			<picture>
+				<Image width="100%" src="/colores.png" />
+			</picture>
 		</article>
 	</div>
 </section>
@@ -67,7 +72,7 @@
 		}
 	}
 
-	picture {
+	footer > picture {
 		width: 50%;
 		max-width: 400px;
 		aspect-ratio: 0.6453362256;
