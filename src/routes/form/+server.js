@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit';
 import { SMTPClient } from 'emailjs';
 
-const EMAIL_ADDRESS = import.meta.env.VITE_EMAIL; 
+const EMAIL_ADDRESS = import.meta.env.VITE_EMAIL;
 const EMAIL_PASS = import.meta.env.VITE_PASS;
 
 /** @type {import('./$types').RequestHandler} */
@@ -29,24 +29,26 @@ export async function POST({ request }) {
         {
           data: /* html */`
 <html>
-  <style>
-  html {
-    font-family: sans-serif;
-  }
+  <head>
+    <style>
+    html {
+      font-family: sans-serif;
+    }
 
-  table {
-    font-family: monospace
-  }
+    table {
+      font-family: monospace
+    }
 
-  td {
-    border: 1px solid #999;
-    padding: 0.5em 1em;
-  }
+    td {
+      border: 1px solid #999;
+      padding: 0.5em 1em;
+    }
 
-  tr {
-    background: #eee;
-  }
-  </style>
+    tr {
+      background: #eee;
+    }
+    </style>
+  </head>
 
   <body>
     <h1>Nuevo pedido ⚡</h1>
