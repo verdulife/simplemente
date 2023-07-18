@@ -30,28 +30,34 @@
 		window.addEventListener('mousemove', seek);
 	}); */
 
-	import Image from '../components/global/Image.svelte';
+	import { ui } from '$lib/ui';
+	import { page } from '$app/stores';
+
+	$: english = $page.route.id === '/en';
+	$: lang = english ? 'en' : 'es';
+	$: home = ui[lang].home;
+
+	console.log(home);
 </script>
 
 <section id="home" class="full">
-	<div class="wrapper row col@md fcenter full">
-		<article class="col w1/2 wfull@md">
+	<div class="wrapper row jcenter aend full">
+		<article class="col jcenter w1/2 w3/4@md hfull">
 			<h1><b>muevete <br /> <i>libremente</i></b></h1>
 			<p><strong>PRESENTANDO <span>SIMPLE-MENTE</span> TECH</strong></p>
 
 			<p>
-				Un pantalón práctico, de carácter minimalista ideal para todas aquellas personas que
-				aprecian sentirse cómodos, en todo momento, que les gusta moverse sin limitaciones y
-				prefieren calidad frente a cantidad.
+				Un pantalón práctico de carácter minimalista, ideal para todas aquellas personas que
+				aprecian sentirse cómodos en todo momento y que les gusta moverse sin limitaciones.
 			</p>
 
 			<footer class="row acenter wfull">
 				<a role="button" href="/#presentation">SABER MÁS</a>
-				<a role="button" class="unset" href="/#contact">CONTACTO</a>
+				<a role="button" class="unset" href="/#measure">CONTACTO</a>
 			</footer>
 		</article>
 
-		<aside class="imagesWrapper row jcenter aend w1/2 wfull@md hfull h1/4@md">
+		<aside class="imagesWrapper row jcenter aend w1/2 wfull@md hfull">
 			<img height="90%" src="/pantalon.png" alt="Pantalon Mynekung" />
 		</aside>
 	</div>
@@ -66,6 +72,11 @@
 	article {
 		gap: 2em;
 		padding: 2em;
+
+		@media (--sm) {
+			padding-left: 1.5em;
+			padding-bottom: 1.5em;
+		}
 	}
 
 	h1 {
@@ -105,15 +116,39 @@
 	a[role='button'] {
 		width: 50%;
 		max-width: 200px;
+
+		@media (--sm) {
+			width: 80%;
+		}
+
+		&:last-of-type {
+			@media (--sm) {
+				display: none;
+			}
+		}
 	}
 
 	.imagesWrapper {
 		position: relative;
 		pointer-events: none;
 
-		@media (--sm) {
+		/* @media (--sm) {
 			position: absolute;
 			bottom: 0;
+			left: 75%;
+			height: 100%;
+		} */
+
+		& img {
+			position: absolute;
+
+			@media (--md) {
+				left: -50%;
+			}
+
+			@media (--sm) {
+				left: -100%;
+			}
 		}
 	}
 </style>

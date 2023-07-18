@@ -1,6 +1,30 @@
 <script>
-	function sendForm() {
-		console.log('works');
+	let formData = {};
+	let buttonText = 'ENVIAR';
+
+	async function sendForm() {
+		buttonText = 'ENVIANDO...';
+
+		const res = await fetch('/form', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(formData)
+		});
+
+		if (!res.ok) {
+			alert('Algo ha salido mal. Porfavor vuelve a intentarlo');
+			return;
+		}
+
+		buttonText = 'GRACIAS 😀';
+
+		setTimeout(() => {
+			buttonText = 'ENVIAR';
+		}, 2000);
+
+		formData = {};
 	}
 </script>
 
@@ -16,42 +40,49 @@
 			<div class="row wrap wfull">
 				<label class="col grow" for="name">
 					<small>Nombre</small>
-					<input class="wfull" type="text" id="name" required />
+					<input class="wfull" type="text" id="name" bind:value={formData.name} required />
 				</label>
 
 				<label class="col grow" for="surname">
 					<small>Apellidos</small>
-					<input class="wfull" type="text" id="surname" required />
+					<input class="wfull" type="text" id="surname" bind:value={formData.surname} required />
 				</label>
 			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="phone">
 					<small>Telefono</small>
-					<input class="wfull" type="tel" inputmode="numeric" id="phone" required />
+					<input
+						class="wfull"
+						type="tel"
+						inputmode="numeric"
+						id="phone"
+						bind:value={formData.phone}
+						required
+					/>
 				</label>
 
 				<label class="col grow" for="email">
 					<small>Email</small>
-					<input class="wfull" type="email" id="email" required />
+					<input class="wfull" type="email" id="email" bind:value={formData.email} required />
 				</label>
 			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="address">
 					<small>Direccion de envio</small>
-					<input class="wfull" type="text" id="address" required />
+					<input class="wfull" type="text" id="address" bind:value={formData.address} required />
 				</label>
 
 				<label class="col grow" for="country">
 					<small>Pais</small>
-					<input class="wfull" type="text" id="country" required />
+					<input class="wfull" type="text" id="country" bind:value={formData.country} required />
 				</label>
 			</div>
 
-			<label class="col wfull" for="type">
+			<label class="col wfull" for="model">
 				<small>Modelo</small>
-				<select class="wfull" id="type" required>
+				<select class="wfull" id="model" bind:value={formData.model} required>
 					<option value="Mynekung">Mynekung</option>
 					<option value="Tarzan Movement">Tarzan Movement</option>
 				</select>
@@ -59,17 +90,23 @@
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="leg_size">
-					<small>Medidas de la pierna</small>
-					<input class="wfull" type="text" id="leg_size" required />
+					<small>Medidas de la pierna (cm)</small>
+					<input class="wfull" type="text" id="leg_size" bind:value={formData.leg_size} required />
 				</label>
 
-				<label class="col grow" for="weist_size">
-					<small>Medidas cintura</small>
-					<input class="wfull" type="text" id="weist_size" required />
+				<label class="col grow" for="waist_size">
+					<small>Medidas cintura (cm)</small>
+					<input
+						class="wfull"
+						type="text"
+						id="waist_size"
+						bind:value={formData.waist_size}
+						required
+					/>
 				</label>
 			</div>
 
-			<button>Enviar</button>
+			<button>{buttonText}</button>
 		</form>
 
 		<span class="xdiv" />

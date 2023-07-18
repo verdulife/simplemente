@@ -1,5 +1,8 @@
 <script>
+	import { page } from '$app/stores';
 	import Image from '$components/global/Image.svelte';
+
+	$: english = $page.route.id === '/en';
 </script>
 
 <nav class="col acenter wfull">
@@ -31,6 +34,12 @@
 		<!-- <li>
 			<a href="mailto:free@simplemente.com">free@simplemente.com</a>
 		</li> -->
+
+		{#if english}
+			<a href="/">🌍 ESPAÑOL</a>
+		{:else}
+			<a href="/en">🌍 ENGLISH</a>
+		{/if}
 	</main>
 </nav>
 
@@ -45,6 +54,29 @@
 	main {
 		max-width: var(--media-xl);
 		padding: 0 2em;
+
+		& > a {
+			background-color: hsl(var(--base-hsl), 0.4);
+			backdrop-filter: blur(0.1em);
+			font-family: var(--font-code);
+			font-weight: bold;
+			font-size: var(--font-xs);
+			clip-path: polygon(
+				0.75em 0%,
+				100% 0,
+				100% calc(100% - 0.75em),
+				calc(100% - 0.75em) 100%,
+				0 100%,
+				0 0.75em
+			);
+			transition: 200ms;
+			padding: 0.5em 1em;
+
+			&:hover {
+				background-color: var(--alt);
+				color: var(--base);
+			}
+		}
 	}
 
 	aside {
@@ -53,15 +85,5 @@
 
 	ul {
 		gap: 4em;
-	}
-
-	li > a {
-		font-family: var(--font-code);
-		transition: 200ms;
-
-		&:hover {
-			background-color: var(--alt);
-			color: var(--base);
-		}
 	}
 </style>

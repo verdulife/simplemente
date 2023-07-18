@@ -1,4 +1,4 @@
-<small>WAISTLINE_2.0 TECHNOLOGY</small>
+<small><b>SIMPLE-MENTE</b> TECH</small>
 
 <style lang="postcss">
 	small {
@@ -9,6 +9,11 @@
 		font-family: var(--font-code);
 		transform: rotate(90deg);
 		transform-origin: bottom right;
+
+		& b {
+			font-weight: normal;
+			color: var(--accent);
+		}
 
 		@media --md {
 			display: none;
