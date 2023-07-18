@@ -1,13 +1,17 @@
 import { json } from '@sveltejs/kit';
 import { SMTPClient } from 'emailjs';
 
+const EMAIL_ADDRESS = import.meta.env.VITE_EMAIL; 
+const EMAIL_PASS = import.meta.env.VITE_PASS;
+
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
   const data = await request.json();
 
+
   const client = new SMTPClient({
-    user: import.meta.env.VITE_EMAIL,
-    password: import.meta.env.VITE_PASS,
+    user: EMAIL_ADDRESS,
+    password: EMAIL_PASS,
     host: 'smtp.ionos.es',
     port: 587,
     tls: {
