@@ -22,16 +22,16 @@
 
 			<footer class="row fcenter wfull">
 				<picture>
-					<Image width="100%" src="/mynekung.jpg" />
+					<Image width="100%" src="/mynekung.jpg" alt="Modelo Mynekung" />
 				</picture>
 
 				<picture>
-					<Image width="100%" src="/tarzan-movement.jpg" />
+					<Image width="100%" src="/tarzan-movement.jpg" alt="Modelo Tarzan Movement" />
 				</picture>
 			</footer>
 
 			<picture>
-				<Image width="100%" src="/colores.png" />
+				<Image width="100%" src="/colores.png" alt="Simple-mente colores disponibles" />
 			</picture>
 		</article>
 	</div>

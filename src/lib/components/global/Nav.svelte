@@ -11,7 +11,7 @@
 	<main class="row jbetween acenter wfull">
 		<aside class="row acenter">
 			<a href="/">
-				<Image width="80px" src="/logo.svg" alt="logo" />
+				<Image width="80px" height="85px" src="/logo.svg" alt="Simple-mente logotipo" />
 			</a>
 
 			<!-- <ul class="row acenter">
@@ -85,7 +85,7 @@
 		gap: 4em;
 	}
 
-	ul {
+	/* ul {
 		gap: 4em;
-	}
+	} */
 </style>
