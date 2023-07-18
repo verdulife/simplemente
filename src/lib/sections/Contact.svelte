@@ -131,6 +131,10 @@
 		gap: 6em;
 		margin: 0 auto;
 		padding: 2em 2em 10em 2em;
+		
+		@media (--sm) {
+			padding: 2em 1em 10em 1em;
+		}
 	}
 
 	h2 {
@@ -152,7 +156,7 @@
 		padding: 6em 4em;
 
 		@media (--sm) {
-			padding: 4em 2em;
+			padding: 4em 1.5em;
 		}
 
 		& .wrap {
