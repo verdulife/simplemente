@@ -43,8 +43,9 @@ export const ui = {
       desc_from: [
         "Su creador",
         "Tarzan movement",
-        "Alexia Films",
+        "Alexias Films",
         "Redes sociales",
+        "Un amigo/conocido",
         "Otros"
       ],
       btn1: "Enviar",
@@ -103,8 +104,9 @@ export const ui = {
       desc_from: [
         "Through its creator",
         "Tarzan movement",
-        "Alexia Films",
+        "Alexias Films",
         "Social networks",
+        "A friend/known",
         "Others"
       ],
       btn1: "Send",

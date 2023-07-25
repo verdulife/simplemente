@@ -5,7 +5,9 @@
 	$: contact = ui[$Lang].contact;
 	$: buttonText = contact.btn1;
 
-	let formData = {};
+	let formData = {
+		lang: $Lang
+	};
 
 	async function sendForm() {
 		buttonText = contact.btn2;
@@ -156,6 +158,7 @@
 					<option value={contact.desc_from[2]}>{contact.desc_from[2]}</option>
 					<option value={contact.desc_from[3]}>{contact.desc_from[3]}</option>
 					<option value={contact.desc_from[4]}>{contact.desc_from[4]}</option>
+					<option value={contact.desc_from[5]}>{contact.desc_from[5]}</option>
 				</select>
 			</label>
 
