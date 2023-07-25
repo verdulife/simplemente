@@ -28,72 +28,93 @@ export async function POST({ request }) {
       attachment: [
         {
           data: /* html */`
-<html>
-  <head>
-    <style>
-    html {
-      font-family: sans-serif;
-    }
+          <html>
 
-    table {
-      font-family: monospace
-    }
-
-    td {
-      border: 1px solid #999;
-      padding: 0.5em 1em;
-    }
-
-    tr {
-      background: #eee;
-    }
-    </style>
-  </head>
-
-  <body>
-    <h1>Nuevo pedido ⚡</h1>
-    <p>Datos del pedido:</p>
-    
-    <table cellpadding="0" cellspacing="0">
-        <tr>
-          <td>NOMBRE</td>
-          <td>${data.name}</td>
-        </tr>
-        <tr>
-          <td>APPELLIDOS</td>
-          <td>${data.surname}</td>
-        </tr>
-        <tr>
-          <td>TELÉFONO</td>
-          <td>${data.phone}</td>
-        </tr>
-        <tr>
-          <td>EMAIL</td>
-          <td>${data.email}</td>
-        </tr>
-        <tr>
-          <td>DIRECCIÓN DE ENVIO</td>
-          <td>${data.address}</td>
-        </tr>
-        <tr>
-          <td>PAÍS</td>
-          <td>${data.country}</td>
-        </tr>
-        <tr>
-          <td>MODELO</td>
-          <td>${data.model}</td>
-        </tr>
-        <tr>
-          <td>MEDIDA PIERNA</td>
-          <td>${data.leg_size}</td>
-        </tr>
-        <tr>
-          <td>MEDIDA CINTURA</td>
-          <td>${data.waist_size}</td>
-        </tr>
-    </table>
-  <body>
-</html>
+          <head>
+            <style>
+              html,
+              body {
+                font-family: sans-serif;
+              }
+          
+              small {
+                font-family: monospace;
+                color: gray;
+              }
+          
+              p {
+                font-weight: bold;
+              }
+            </style>
+          </head>
+          
+          <body>
+            <h1>Nuevo pedido ⚡</h1>
+          
+            <div>
+              <small>NOMBRE</small>
+              <p>${data.name}</p>
+            </div>
+            <hr>
+            <div>
+              <small>APPELLIDOS</small>
+              <p>${data.surname}</small>
+            </div>
+            <hr>
+            <div>
+              <small>TELÉFONO</small>
+              <p>${data.phone}</p>
+            </div>
+            <hr>
+            <div>
+              <small>EMAIL</small>
+              <p>${data.email}</p>
+            </div>
+            <hr>
+            <div>
+              <small>DIRECCIÓN DE ENVIO</small>
+              <p>${data.address}</p>
+            </div>
+            <hr>
+            <div>
+              <small>PAÍS</small>
+              <p>${data.country}</p>
+            </div>
+            <hr>
+            <div>
+              <small>MODELO</small>
+              <p>${data.model}</p>
+            </div>
+            <hr>
+            <div>
+              <small>COLOR</small>
+              <p>${data.color}</p>
+            </div>
+            <hr>
+            <div>
+              <small>CANTIDAD</small>
+              <p>${data.amount}</p>
+            </div>
+            <hr>
+            <div>
+              <small>MEDIDA PIERNA</small>
+              <p>${data.leg_size}</p>
+            </div>
+            <hr>
+            <div>
+              <small>MEDIDA CINTURA</small>
+              <p>${data.waist_size}</p>
+            </div>
+            <hr>
+            <div>
+              <small>REFERIDO</small>
+              <p>${data.from}</p>
+            </div>
+            <hr>
+          
+            <body>
+          
+          </html>
         `, alternative: true
         }
       ],

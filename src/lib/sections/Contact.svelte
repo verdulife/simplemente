@@ -83,31 +83,65 @@
 				</label>
 			</div>
 
-			<label class="col wfull" for="model">
-				<small>{contact.input_model}</small>
-				<select class="wfull" id="model" bind:value={formData.model} required>
-					<option value="Mynekung">Mynekung</option>
-					<option value="Tarzan Movement">Tarzan Movement</option>
-				</select>
-			</label>
+			<div class="row wrap wfull">
+				<label class="col grow" for="model">
+					<small>{contact.input_model}</small>
+					<select class="wfull" id="model" bind:value={formData.model} required>
+						<option value="Mynekung">Mynekung</option>
+						<option value="Tarzan Movement">Tarzan Movement</option>
+					</select>
+				</label>
+
+				<label class="col grow" for="color">
+					<small>{contact.input_color}</small>
+					<select class="wfull" id="color" bind:value={formData.color} required>
+						<option value="Atlantic Blue">Atlantic Blue</option>
+						<option value="Avena">Avena</option>
+					</select>
+				</label>
+
+				<label class="col grow" for="amount">
+					<small>{contact.input_amount}</small>
+					<input class="wfull" type="number" id="amount" bind:value={formData.amount} required />
+				</label>
+			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="leg_size">
 					<small>{contact.input_leg}</small>
-					<input class="wfull" type="text" id="leg_size" bind:value={formData.leg_size} required />
+					<input
+						class="wfull"
+						type="number"
+						step="0.01"
+						id="leg_size"
+						bind:value={formData.leg_size}
+						required
+					/>
 				</label>
 
 				<label class="col grow" for="waist_size">
 					<small>{contact.input_waist}</small>
 					<input
 						class="wfull"
-						type="text"
+						type="number"
+						step="0.01"
 						id="waist_size"
 						bind:value={formData.waist_size}
 						required
 					/>
 				</label>
 			</div>
+
+			<label class="col wfull" for="from">
+				<small>{contact.input_from}</small>
+				<select class="wfull" id="from" bind:value={formData.from} required>
+					<option value={contact.desc_from[0]}>{contact.desc_from[0]}</option>
+					<option value={contact.desc_from[1]}>{contact.desc_from[1]}</option>
+					<option value={contact.desc_from[2]}>{contact.desc_from[2]}</option>
+					<option value={contact.desc_from[3]}>{contact.desc_from[3]}</option>
+					<option value={contact.desc_from[4]}>{contact.desc_from[4]}</option>
+				</select>
+			</label>
 
 			<button>{buttonText}</button>
 		</form>
@@ -131,7 +165,7 @@
 		gap: 6em;
 		margin: 0 auto;
 		padding: 2em 2em 10em 2em;
-		
+
 		@media (--sm) {
 			padding: 2em 1em 10em 1em;
 		}
