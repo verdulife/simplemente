@@ -36,52 +36,11 @@
 <section id="contact" class="row fcenter wfull">
 	<div class="wrapper col acenter wfull">
 		<h2 class="tcenter">
-			<b>{contact.title1} <i>{contact.title2}</i> </b>
+			<b>{contact.title1} <i>{contact.title2}</i></b>
 		</h2>
 
 		<form class="row wrap jcenter wfull" on:submit|preventDefault={sendForm}>
-			<div class="row wrap wfull">
-				<label class="col grow" for="name">
-					<small>{contact.input_name}</small>
-					<input class="wfull" type="text" id="name" bind:value={formData.name} required />
-				</label>
-
-				<label class="col grow" for="surname">
-					<small>{contact.input_surname}</small>
-					<input class="wfull" type="text" id="surname" bind:value={formData.surname} required />
-				</label>
-			</div>
-
-			<div class="row wrap wfull">
-				<label class="col grow" for="phone">
-					<small>{contact.input_phone}</small>
-					<input
-						class="wfull"
-						type="tel"
-						inputmode="numeric"
-						id="phone"
-						bind:value={formData.phone}
-						required
-					/>
-				</label>
-
-				<label class="col grow" for="email">
-					<small>{contact.input_email}</small>
-					<input class="wfull" type="email" id="email" bind:value={formData.email} required />
-				</label>
-			</div>
-
-			<div class="row wrap wfull">
-				<label class="col grow" for="address">
-					<small>{contact.input_address}</small>
-					<input class="wfull" type="text" id="address" bind:value={formData.address} required />
-				</label>
-
-				<label class="col grow" for="country">
-					<small>{contact.input_country}</small>
-					<input class="wfull" type="text" id="country" bind:value={formData.country} required />
-				</label>
-			</div>
+			<h3 class="wfull">Datos del pedido</h3>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="model">
@@ -129,6 +88,63 @@
 						bind:value={formData.waist_size}
 						required
 					/>
+				</label>
+			</div>
+
+			<label class="col wfull" for="notes">
+				<small>{contact.input_notes}</small>
+				<textarea
+					class="wfull"
+					id="notes"
+					bind:value={formData.notes}
+					placeholder={contact.placeholder_notes}
+					required
+				/>
+			</label>
+
+			<span class="xdiv" />
+			<h3 class="wfull">Datos de contacto</h3>
+
+			<div class="row wrap wfull">
+				<label class="col grow" for="name">
+					<small>{contact.input_name}</small>
+					<input class="wfull" type="text" id="name" bind:value={formData.name} required />
+				</label>
+
+				<label class="col grow" for="surname">
+					<small>{contact.input_surname}</small>
+					<input class="wfull" type="text" id="surname" bind:value={formData.surname} required />
+				</label>
+			</div>
+
+			<div class="row wrap wfull">
+				<label class="col grow" for="phone">
+					<small>{contact.input_phone}</small>
+					<input
+						class="wfull"
+						type="tel"
+						inputmode="numeric"
+						id="phone"
+						bind:value={formData.phone}
+						required
+					/>
+				</label>
+
+				<label class="col grow" for="email">
+					<small>{contact.input_email}</small>
+					<input class="wfull" type="email" id="email" bind:value={formData.email} required />
+				</label>
+			</div>
+
+			<div class="row wrap wfull">
+				<label class="col grow" for="address">
+					<small>{contact.input_address}</small>
+					<input class="wfull" type="text" id="address" bind:value={formData.address} required />
+				</label>
+
+				<label class="col grow" for="country">
+					<small>{contact.input_country}</small>
+					<input class="wfull" type="text" id="country" bind:value={formData.country} required />
 				</label>
 			</div>
 
@@ -191,6 +207,16 @@
 
 		@media (--sm) {
 			padding: 4em 1.5em;
+		}
+
+		& h3 {
+			color: var(--base);
+			padding: 0 1em;
+		}
+
+		& .xdiv {
+			background-color: var(--base-700);
+			margin: 2em 0;
 		}
 
 		& .wrap {

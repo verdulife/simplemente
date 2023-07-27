@@ -37,6 +37,8 @@ export const ui = {
       input_amount: "Cantidad",
       input_leg: "Medidas de la pierna (cm)",
       input_waist: "Medidas de la cintura (cm)",
+      input_notes: "Observaciones",
+      placeholder_notes: "Ej. Tobillos anchos",
       input_from: "¿Cómo has conocido Simplemente?",
       desc_from: [
         "Su creador",
@@ -95,6 +97,8 @@ export const ui = {
       input_amount: "Amount",
       input_leg: "Leg measurements (cm)",
       input_waist: "Waist measurements (cm)",
+      input_notes: "Observations",
+      placeholder_notes: "Ex. Wide ankles",
       input_from: "How did you know Simplemente?",
       desc_from: [
         "Through its creator",
