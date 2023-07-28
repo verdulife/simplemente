@@ -23,6 +23,12 @@ export const ui = {
       desc4: "formulario",
       btn: "DESCARGAR PDF"
     },
+    social: {
+      title1: "Descubre que dicen de nosotros en ",
+      title2: "redes sociales",
+      tarzan_text: "Thanks to @simplemente_edicioneslimitadas for this edition of the Tarzan movement pants, I love it 🥰",
+      alexias_text: "I had a lot of fun practicing and filming 🐒 beautiful movement pants from @simplemente_edicioneslimitadas. Let me know if you would like a pair, I'll put you in contact with the creator of this amazing brand."
+    },
     contact: {
       title1: "Formulario de",
       title2: "contacto",
@@ -83,6 +89,12 @@ export const ui = {
       desc3: "to take measurements according to the model, and fill out the",
       desc4: "form",
       btn: "DOWNLOAD PDF"
+    },
+    social: {
+      title1: "Descubre que dicen de nosotros en ",
+      title2: "redes sociales",
+      tarzan_text: "Thanks to @simplemente_edicioneslimitadas for this edition of the Tarzan movement pants, I love it 🥰",
+      alexias_text: "I had a lot of fun practicing and filming 🐒 beautiful movement pants from @simplemente_edicioneslimitadas. Let me know if you would like a pair, I'll put you in contact with the creator of this amazing brand."
     },
     contact: {
       title1: "Contact",

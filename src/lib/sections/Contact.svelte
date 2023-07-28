@@ -7,7 +7,8 @@
 
 	let formData = {
 		lang: $Lang,
-		notes: ""
+		amount: 1,
+		notes: ''
 	};
 
 	async function sendForm() {
@@ -162,7 +163,7 @@
 				</select>
 			</label>
 
-			<button>{buttonText}</button>
+			<button disabled={buttonText !== contact.btn1}>{buttonText}</button>
 		</form>
 
 		<span class="xdiv" />
