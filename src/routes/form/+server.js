@@ -6,12 +6,16 @@ const EMAIL_PASS = import.meta.env.VITE_PASS;
 
 const ui = {
   es: {
-    title: "Gracias por contactar con nosotros",
-    desc: "Pronto nos pondremos en contacto contigo."
+    title: "Hola 👋 ",
+    line1: "¡Muchas gracias por tu interés en adquirir uno de nuestros modelos simple-mente!",
+    line2: "Hemos recibido tu correo electrónico correctamente y nos pondremos en contacto contigo lo antes posible. Mientras tanto, si tienes alguna duda o pregunta, no dudes en ponerte en contacto con nosotros a través de este mismo correo electrónico. Estaremos encantados de ayudarte.",
+    line3: "Atentamente, El equipo Simple-mente."
   },
   en: {
-    title: "Thank you for contacting us",
-    desc: "We will contact you soon."
+    title: "Hello 👋 ",
+    line1: "Thank you very much for your interest in purchasing one of our simply-mind models!",
+    line2: "We have received your email correctly and we will contact you as soon as possible. In the meantime, if you have any doubts or questions, do not hesitate to contact us through this same email. We will be happy to help you.",
+    line3: "Sincerely, The Simple-mente team."
   }
 }
 
@@ -139,8 +143,8 @@ export async function POST({ request }) {
     await client.sendAsync({
       from: 'Simplemente Wear™ <email@simplementewear.com>',
       to: `${data.name} ${data.surname} <${data.email}>`,
-      subject: `${email.title}`,
-      text: `${email.title}`,
+      subject: `${email.title} ${data.name}`,
+      text: `${email.title} ${data.name}`,
       attachment: [
         {
           data: /* html */`
@@ -229,7 +233,7 @@ export async function POST({ request }) {
             width="596">
 
             <!-- Your logo is here -->
-            <img style="width: 180px; max-width: 180px; height: 85px; max-height: 85px; text-align: center; color: #ffffff;" alt="Logo" src="https://www.simplementewear.com/logo-192.png" align="center" width="180" height="85">
+            <img style="width: 100px; max-width: 100px; height: 100px; max-height: 100px; text-align: center; color: #ffffff;" alt="Simple-mente" src="https://www.simplementewear.com/logo-192.png" align="center" width="100" height="100">
 
           </td>
         </tr>
@@ -247,13 +251,17 @@ export async function POST({ request }) {
             style="width: 596px; vertical-align: top; padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 40px;"
             width="596">
 
-            <h1
-              style="font-size: 20px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; text-decoration: none; color: #000000;">
-              ${email.title}</h1>
+            <h1 style="font-size: 20px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; text-decoration: none; color: #000000;">
+              ${email.title} ${data.name},
+            </h1>
 
-            <p
-              style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
-              ${email.desc}</p>
+            <p style="font-size: 15px; line-height: 24px; font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; text-decoration: none; color: #919293;">
+              ${email.line1}
+              <br><br>
+              ${email.line2}
+              <br><br>
+              ${email.line3}
+            </p>
 
           </td>
         </tr>

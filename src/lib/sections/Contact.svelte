@@ -6,7 +6,8 @@
 	$: buttonText = contact.btn1;
 
 	let formData = {
-		lang: $Lang
+		lang: $Lang,
+		notes: ""
 	};
 
 	async function sendForm() {
@@ -100,7 +101,6 @@
 					id="notes"
 					bind:value={formData.notes}
 					placeholder={contact.placeholder_notes}
-					required
 				/>
 			</label>
 
