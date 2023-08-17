@@ -9,6 +9,7 @@
 		font-family: var(--font-code);
 		transform: rotate(90deg);
 		transform-origin: bottom right;
+		z-index: 1;
 
 		& b {
 			font-weight: normal;

@@ -1,22 +1,17 @@
 <script>
-	import { ui } from '$lib/ui';
-	import { Lang } from '$lib/stores';
-
-	$: presentation = ui[$Lang].presentation;
+	export let ui;
 </script>
 
 <section id="presentation" class="wfull">
 	<div class="wrapper row fcenter full">
 		<article class="col acenter wfull">
 			<h2 class="tcenter">
-				<b>{presentation.title1} <br /> {presentation.title2} <i>{presentation.title3}</i></b>
+				<b>{ui.title1} <br /> {ui.title2} <i>{ui.title3}</i></b>
 			</h2>
 
 			<span class="xdiv" />
 
-			<p class="tcenter">{@html presentation.desc}</p>
-
-			<a role="button" href="/#measure">{presentation.btn}</a>
+			<p class="tcenter">{@html ui.desc}</p>
 		</article>
 	</div>
 </section>
@@ -56,10 +51,5 @@
 		text-align: center;
 		color: var(--base-300);
 		max-width: 900px;
-	}
-
-	a[role='button'] {
-		background-color: var(--base);
-		color: var(--alt);
 	}
 </style>

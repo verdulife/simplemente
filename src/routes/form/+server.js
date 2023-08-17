@@ -88,7 +88,7 @@ export async function POST({ request }) {
             <hr>
             <div>
               <small>DIRECCIÓN DE ENVIO</small>
-              <p>${data.address}</p>
+              <p>${data.address}, ${data.city} (${data.cp})</p>
             </div>
             <hr>
             <div>

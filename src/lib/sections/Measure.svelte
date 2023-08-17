@@ -1,21 +1,18 @@
 <script>
 	import Image from '../components/global/Image.svelte';
 
-	import { ui } from '$lib/ui';
-	import { Lang } from '$lib/stores';
-
-	$: measure = ui[$Lang].measure;
+	export let ui;
 </script>
 
 <section id="measure" class="row fcenter wfull">
 	<div class="wrapper row fcenter wfull">
 		<article class="col acenter wfull">
 			<h2 class="tcenter wfull">
-				<b>{measure.desc1} <i>{measure.desc2}</i> {measure.desc3} <i>{measure.desc4}</i>.</b>
+				<b>{ui.desc1} <i>{ui.desc2}</i> {ui.desc3} <i>{ui.desc4}</i>.</b>
 			</h2>
 
 			<main class="row col@md jevenly acenter wfull">
-				<a role="button" href="/user-guide.pdf" target="_blank">{measure.btn}</a>
+				<a role="button" href="/user-guide.pdf" target="_blank">{ui.btn}</a>
 			</main>
 
 			<span class="xdiv" />

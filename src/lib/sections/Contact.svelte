@@ -1,9 +1,8 @@
 <script>
-	import { ui } from '$lib/ui';
 	import { Lang } from '$lib/stores';
 
-	$: contact = ui[$Lang].contact;
-	$: buttonText = contact.btn1;
+	export let ui;
+	$: buttonText = ui.btn1;
 
 	let formData = {
 		lang: $Lang,
@@ -12,7 +11,7 @@
 	};
 
 	async function sendForm() {
-		buttonText = contact.btn2;
+		buttonText = ui.btn2;
 
 		const res = await fetch('/form', {
 			method: 'POST',
@@ -23,14 +22,14 @@
 		});
 
 		if (!res.ok) {
-			alert(contact.error);
+			alert(ui.error);
 			return;
 		}
 
-		buttonText = contact.btn3;
+		buttonText = ui.btn3;
 
 		setTimeout(() => {
-			buttonText = contact.btn1;
+			buttonText = ui.btn1;
 		}, 2000);
 
 		formData = {};
@@ -40,7 +39,7 @@
 <section id="contact" class="row fcenter wfull">
 	<div class="wrapper col acenter wfull">
 		<h2 class="tcenter">
-			<b>{contact.title1} <i>{contact.title2}</i></b>
+			<b>{ui.title1} <i>{ui.title2}</i></b>
 		</h2>
 
 		<form class="row wrap jcenter wfull" on:submit|preventDefault={sendForm}>
@@ -48,7 +47,7 @@
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="model">
-					<small>{contact.input_model}</small>
+					<small>{ui.input_model}</small>
 					<select class="wfull" id="model" bind:value={formData.model} required>
 						<option value="Mynekung">Mynekung</option>
 						<option value="Tarzan Movement">Tarzan Movement</option>
@@ -56,7 +55,7 @@
 				</label>
 
 				<label class="col grow" for="color">
-					<small>{contact.input_color}</small>
+					<small>{ui.input_color}</small>
 					<select class="wfull" id="color" bind:value={formData.color} required>
 						<option value="Atlantic Blue">Atlantic Blue</option>
 						<option value="Avena">Avena</option>
@@ -64,14 +63,14 @@
 				</label>
 
 				<label class="col grow" for="amount">
-					<small>{contact.input_amount}</small>
+					<small>{ui.input_amount}</small>
 					<input class="wfull" type="number" id="amount" bind:value={formData.amount} required />
 				</label>
 			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="leg_size">
-					<small>{contact.input_leg}</small>
+					<small>{ui.input_leg}</small>
 					<input
 						class="wfull"
 						type="number"
@@ -83,7 +82,7 @@
 				</label>
 
 				<label class="col grow" for="waist_size">
-					<small>{contact.input_waist}</small>
+					<small>{ui.input_waist}</small>
 					<input
 						class="wfull"
 						type="number"
@@ -96,12 +95,12 @@
 			</div>
 
 			<label class="col wfull" for="notes">
-				<small>{contact.input_notes}</small>
+				<small>{ui.input_notes}</small>
 				<textarea
 					class="wfull"
 					id="notes"
 					bind:value={formData.notes}
-					placeholder={contact.placeholder_notes}
+					placeholder={ui.placeholder_notes}
 				/>
 			</label>
 
@@ -110,19 +109,19 @@
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="name">
-					<small>{contact.input_name}</small>
+					<small>{ui.input_name}</small>
 					<input class="wfull" type="text" id="name" bind:value={formData.name} required />
 				</label>
 
 				<label class="col grow" for="surname">
-					<small>{contact.input_surname}</small>
+					<small>{ui.input_surname}</small>
 					<input class="wfull" type="text" id="surname" bind:value={formData.surname} required />
 				</label>
 			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="phone">
-					<small>{contact.input_phone}</small>
+					<small>{ui.input_phone}</small>
 					<input
 						class="wfull"
 						type="tel"
@@ -134,36 +133,46 @@
 				</label>
 
 				<label class="col grow" for="email">
-					<small>{contact.input_email}</small>
+					<small>{ui.input_email}</small>
 					<input class="wfull" type="email" id="email" bind:value={formData.email} required />
 				</label>
 			</div>
 
 			<div class="row wrap wfull">
 				<label class="col grow" for="address">
-					<small>{contact.input_address}</small>
+					<small>{ui.input_address}</small>
 					<input class="wfull" type="text" id="address" bind:value={formData.address} required />
 				</label>
 
+				<label class="col grow" for="city">
+					<small>{ui.input_city}</small>
+					<input class="wfull" type="text" id="city" bind:value={formData.city} required />
+				</label>
+
+				<label class="col grow" for="cp">
+					<small>{ui.input_cp}</small>
+					<input class="wfull" type="text" id="cp" bind:value={formData.cp} required />
+				</label>
+
 				<label class="col grow" for="country">
-					<small>{contact.input_country}</small>
+					<small>{ui.input_country}</small>
 					<input class="wfull" type="text" id="country" bind:value={formData.country} required />
 				</label>
 			</div>
 
 			<label class="col wfull" for="from">
-				<small>{contact.input_from}</small>
+				<small>{ui.input_from}</small>
 				<select class="wfull" id="from" bind:value={formData.from} required>
-					<option value={contact.desc_from[0]}>{contact.desc_from[0]}</option>
-					<option value={contact.desc_from[1]}>{contact.desc_from[1]}</option>
-					<option value={contact.desc_from[2]}>{contact.desc_from[2]}</option>
-					<option value={contact.desc_from[3]}>{contact.desc_from[3]}</option>
-					<option value={contact.desc_from[4]}>{contact.desc_from[4]}</option>
-					<option value={contact.desc_from[5]}>{contact.desc_from[5]}</option>
+					<option value={ui.desc_from[0]}>{ui.desc_from[0]}</option>
+					<option value={ui.desc_from[1]}>{ui.desc_from[1]}</option>
+					<option value={ui.desc_from[2]}>{ui.desc_from[2]}</option>
+					<option value={ui.desc_from[3]}>{ui.desc_from[3]}</option>
+					<option value={ui.desc_from[4]}>{ui.desc_from[4]}</option>
+					<option value={ui.desc_from[5]}>{ui.desc_from[5]}</option>
 				</select>
 			</label>
 
-			<button disabled={buttonText !== contact.btn1}>{buttonText}</button>
+			<button disabled={buttonText !== ui.btn1}>{buttonText}</button>
 		</form>
 
 		<span class="xdiv" />
@@ -171,8 +180,8 @@
 		<footer>
 			<p class="tcenter">
 				<b>
-					{contact.footer1} <i>{contact.footer2}</i>{contact.footer3}
-					<i>{contact.footer4}</i>{contact.footer5}
+					{ui.footer1} <i>{ui.footer2}</i>{ui.footer3}
+					<i>{ui.footer4}</i>{ui.footer5}
 				</b>
 			</p>
 		</footer>
