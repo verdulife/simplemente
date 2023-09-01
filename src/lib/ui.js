@@ -12,7 +12,15 @@ export const es = {
     title1: "Una confección",
     title2: "con",
     title3: "historia",
-    desc: "Desde hace 15 años soy maestro de Kung-fu y llevo practicando este arte marcial durante más 26 años. Este pantalón que diseñe personalmente, fue creado para satisfacer mis necesidades específicas, ya que no encontraba exactamente lo que buscaba. Con el tiempo, mis alumnos y otros maestros de Kung-fu comenzaron a usarlo. A día de hoy, muchos maestros de gimnasio, yoga y de artes marciales me están comprando este pantalón. <br /><br /> Durante 14 años he trabajado en perfeccionar su diseño, buscando constantemente los puntos débiles y mejorándolo. Este pantalón te permite moverte libremente mientras brinda una confortable sujeción en la zona lumbar y el abdomen, liberando el centro energético de nuestro cuerpo. Es por eso que hoy me siento orgulloso y satisfecho con los resultados que he logrado. <br /><br /> El pantalón color <strong>Atlántida</strong> está compuesto por un <strong>13% de tela de cáñamo ecológica</strong>, <strong>68% de algodón ecológico</strong> y un <strong>19% de nilón reciclado</strong>. El color <strong>Avena</strong> está compuesto por un <strong>53% cáñamo ecológico</strong>, <strong>44% R-Poly</strong> y un <strong>3% spandex</strong>. Estas combinaciones proporcionan una resistencia excepcional, incluso mayor que la del tejano, a la vez que son más ligeras y flexibles.",
+    desc: `
+      Llevo más de la mitad de mi vida en la práctica del movimiento físico y la consciencia corporal a través de las artes marciales.
+      He dedicado los últimos 15 años en pulir un diseño de pantalón que me acompañe en ello sin limitar mi movimiento. 
+      <br /><br />
+      Este pantalón sigue tu movimiento auténtico sin límites. Permite tu respiración natural.
+      Su cintura ergonómica crea un abrazo lumbar y abdominal excepcional, ya que se adapta sin igual a las diferentes necesidades de cada cuerpo.
+      <br /><br />
+      Ambos modelos se componen de una estricta combinación de tejidos ecológicos. Estas combinaciones proporcionan una resistencia excepcional,
+      incluso mayor que la del tejano, a la vez que son más ligeras y flexibles.`,
   },
   pricing: {
     title1: "Precio promocional",
@@ -28,13 +36,9 @@ export const es = {
     desc2: "PDF",
     desc3: "para tomar las medidas según el modelo, y rellena el",
     desc4: "formulario",
-    btn: "DESCARGAR PDF"
-  },
-  social: {
-    title1: "Descubre que dicen de nosotros en ",
-    title2: "redes sociales",
-    tarzan_text: "Thanks to @simplemente_edicioneslimitadas for this edition of the Tarzan movement pants, I love it 🥰",
-    alexias_text: "I had a lot of fun practicing and filming 🐒 beautiful movement pants from @simplemente_edicioneslimitadas. Let me know if you would like a pair, I'll put you in contact with the creator of this amazing brand."
+    btn: "DESCARGAR PDF",
+    model_label: "Modelo",
+    title_color: "Colores disponibles"
   },
   contact: {
     title1: "Formulario de",
@@ -89,7 +93,15 @@ export const en = {
     title1: "A confection",
     title2: "with",
     title3: "history",
-    desc: "I have been a Kung-fu master for 15 years and I have been practicing this martial art for more than 26 years. These pants that I personally designed, were created to meet my specific needs, since I couldn't find exactly what I was looking for. Over time, my students and other Kung-fu teachers began to use it. To this day, many gym, yoga and martial arts teachers are buying these pants from me. <br /><br /> For 14 years I have worked on perfecting its design, constantly looking for weak points and improving it. These pants allow you to move freely while providing comfortable support in the lower back and abdomen, freeing up the energy center of our body. That is why today I feel proud and satisfied with the results I have achieved. <br /><br /> The <strong>Atlántida</strong> color pants are made of <strong>13% organic hemp fabric</strong>, <strong>68% organic cotton</strong> and <strong>19% recycled nylon</strong>. The <strong>Oatmeal</strong> color is made of <strong>53% organic hemp</strong>, <strong>44% R-Poly</strong> and <strong>3% spandex</strong> . These combinations provide exceptional resistance, even greater than that of Texan, while being lighter and more flexible.",
+    desc: `
+      I have spent more than half of my life practicing physical movement and body awareness through martial arts.
+      I have dedicated the last 15 years to polishing a pants design that accompanies me without limiting my movement.    
+      <br /><br />
+      These pants follow your authentic movement without limits. Allow your natural breathing.
+      Its ergonomic waist creates an exceptional lumbar and abdominal hug, as it adapts unrivaled to the different needs of each body.
+      <br /><br />
+      Both models are made up of a strict combination of ecological fabrics.
+      These combinations provide exceptional resistance, even greater than that of denim, while being lighter and more flexible.`,
   },
   pricing: {
     title1: "Promotional price for",
@@ -105,13 +117,9 @@ export const en = {
     desc2: "PDF",
     desc3: "to take measurements according to the model, and fill out the",
     desc4: "form",
-    btn: "DOWNLOAD PDF"
-  },
-  social: {
-    title1: "Descubre que dicen de nosotros en ",
-    title2: "redes sociales",
-    tarzan_text: "Thanks to @simplemente_edicioneslimitadas for this edition of the Tarzan movement pants, I love it 🥰",
-    alexias_text: "I had a lot of fun practicing and filming 🐒 beautiful movement pants from @simplemente_edicioneslimitadas. Let me know if you would like a pair, I'll put you in contact with the creator of this amazing brand."
+    btn: "DOWNLOAD PDF",
+    model_label: "Model",
+    title_color: "Available colors"
   },
   contact: {
     title1: "Contact",
