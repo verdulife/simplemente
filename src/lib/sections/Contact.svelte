@@ -15,8 +15,6 @@
 		referal: referals[referal_param] || null
 	};
 
-	$: console.log(formData);
-
 	async function sendForm() {
 		buttonText = ui.btn2;
 
