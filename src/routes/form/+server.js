@@ -39,7 +39,7 @@ export async function POST({ request }) {
     const { data: ownData, error: ownError } = await resend.emails.send({
       from: 'Simplemente Web <email@mail.simplementewear.com>',
       to: 'Simplemente Web <email@simplementewear.com>',
-      subject: `Nuevo pedido desde ${data.country}`,
+      subject: `Nuevo pedido desde ${data.country}${data.referal ? ` | ${data.referal}` : ""}`,
       html: `
           <html>
 
@@ -63,6 +63,7 @@ export async function POST({ request }) {
           
           <body>
             <h1>Nuevo pedido ⚡</h1>
+            <p>Referenciado: <strong>${data.referal || "NO"}</strong></p>
           
             <div>
               <small>NOMBRE</small>
@@ -110,13 +111,18 @@ export async function POST({ request }) {
             </div>
             <hr>
             <div>
+              <small>ALTURA DEL CUERPO</small>
+              <p>${data.body_height}cm</p>
+            </div>
+            <hr>
+            <div>
               <small>MEDIDA PIERNA</small>
-              <p>${data.leg_size}</p>
+              <p>${data.leg_size}cm</p>
             </div>
             <hr>
             <div>
               <small>MEDIDA CINTURA</small>
-              <p>${data.waist_size}</p>
+              <p>${data.waist_size}cm</p>
             </div>
             <hr>
             <div>

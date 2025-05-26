@@ -1,5 +1,9 @@
 <script>
 	import { Lang } from '$lib/stores';
+	import { page } from '$app/stores';
+	import { referals } from '$lib/referals';
+
+	const referal_param = $page.url.searchParams.get('referal');
 
 	export let ui;
 	$: buttonText = ui.btn1;
@@ -7,8 +11,11 @@
 	let formData = {
 		lang: $Lang,
 		amount: 1,
-		notes: ''
+		notes: '',
+		referal: referals[referal_param] || null
 	};
+
+	$: console.log(formData);
 
 	async function sendForm() {
 		buttonText = ui.btn2;
@@ -69,6 +76,18 @@
 			</div>
 
 			<div class="row wrap wfull">
+				<label class="col grow" for="body_height">
+					<small>{ui.input_height}</small>
+					<input
+						class="wfull"
+						type="number"
+						step="0.01"
+						id="body_height"
+						bind:value={formData.body_height}
+						required
+					/>
+				</label>
+
 				<label class="col grow" for="leg_size">
 					<small>{ui.input_leg}</small>
 					<input
