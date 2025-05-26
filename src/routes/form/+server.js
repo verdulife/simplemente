@@ -63,7 +63,7 @@ export async function POST({ request }) {
           
           <body>
             <h1>Nuevo pedido ⚡</h1>
-            <p>Referenciado: <strong>${data.referal || "NO"}</strong></p>
+            <p>Referido: <strong>${data.referal || "NO"}</strong></p>
           
             <div>
               <small>NOMBRE</small>
